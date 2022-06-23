@@ -1,0 +1,81 @@
+//keydown
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js drum kit</title>
+        <link href="style.css">
+    </head>
+    <body>
+        <div class="keys">
+            <div data-key="65" class="key">
+                <kbd>A</kbd>
+                <span class="audio" >achievement-win</span>
+            </div>
+
+            <div data-key="83" class="key">
+                <kbd>S</kbd>
+                <span class="audio" >atmospheric-wind</span>
+            </div>
+
+            <div data-key="68" class="key">
+                <kbd>D</kbd>
+                <span class="audio" >cinematic-mystery</span>
+            </div>
+
+            <div data-key="70" class="key">
+                <kbd>F</kbd>
+                <span class="audio" >cool-impact</span>
+            </div>
+
+            <div data-key="71" class="key">
+                <kbd>G</kbd>
+                <span class="audio" >deep-cinematic</span>
+            </div>
+            
+            <div data-key="72" class="key">
+                <kbd>H</kbd>
+                <span class="audio" >deep-impact</span>
+            </div>
+            
+            <div data-key="74" class="key">
+                <kbd>J</kbd>
+                <span class="audio" >horror-tunnel</span>
+            </div>
+
+            <div data-key="75" class="key">
+                <kbd>K</kbd>
+                <span class="audio" >losing-drums</span>
+            </div>
+
+            <div data-key="76" class="key">
+                <kbd>L</kbd>
+                <span class="audio" >ominous</span>
+            </div>
+        </div>
+
+
+        <audio data-key="65" src="sounds/achievement-win.wav"></audio>
+        <audio data-key="83" src="sounds/atmospheric-wind.wav"></audio>
+        <audio data-key="68" src="sounds/cinematic-mystery.mp3"></audio>
+        <audio data-key="70" src="sounds/cool-impact.wav"></audio>
+        <audio data-key="71" src="sounds/deep-cinematic.wav"></audio>
+        <audio data-key="72" src="sounds/deep-impact.wav"></audio>
+        <audio data-key="74" src="sounds/horror-tunnel.wav"></audio>
+        <audio data-key="75" src="sounds/losing-drums.wav"></audio>
+        <audio data-key="76" src="sounds/ominous.wav"></audio>
+
+        <script>
+            window.addEventListener('keydown',function(e){
+                let audio=document.querySelector(`audio[data-key="${e.keyCode}"]`); 
+                //console.log(audio);
+                if(!audio) return//stop the function from executing
+                audio.play(); 
+            })
+        </script>
+
+
+    
+    </body>
+</html>
